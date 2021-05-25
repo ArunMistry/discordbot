@@ -18,10 +18,7 @@ class myClient(discord.Client):
         print(f"Message from {ctx.author}: {ctx.content}")
         if ctx.author == client.user:
             return
-        elif ctx.content.startswith("die"): # remove once done, only for prototyping
-            await client.close()
         else:
-            importlib.reload(msgparse) # remove once done, only for prototyping
             await msgparse.parser(client, ctx)
 
 

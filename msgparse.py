@@ -1,10 +1,4 @@
 import discord
-from discord.ext import commands
-import os
-from discord.ext.commands import Bot, cog
-from dotenv import load_dotenv
-import requests
-import json
 import importlib
 
 
@@ -21,9 +15,7 @@ async def parser(client, ctx):
         elif "stock" in msg or "price" in msg or "share" in msg:
             await finance.stock(ctx, msg)
         else:
-            await ctx.channel.send(
-                "Hi, I'm Pybot! Check out what I can do by typing `!help` or `Pybot help`"
-            )
+            await ctx.channel.send("Hi, I'm Pybot! Check out what I can do by typing `!help` or `Pybot help`")
     else:
         return
 
